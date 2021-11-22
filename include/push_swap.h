@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/20 16:12:08 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/22 00:51:01 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_stack
 	int	size;
 	int	min_num;
 	int	max_num;
+	int	min_index;
 }	t_stack;
 
 typedef struct s_struct
@@ -43,6 +44,8 @@ typedef struct s_struct
 	int		middle_index;
 }	t_struct;
 
+// !修正必須
+void	is_rr_from_a(t_struct *data);
 void	error_exit(char *message);
 void	error_exit_with_free(t_struct *data, char *message);
 void	get_standard_value(t_struct *data);

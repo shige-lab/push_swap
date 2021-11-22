@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/20 20:46:50 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/22 00:06:18 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,10 @@ void	push_swap_over_7(t_struct *data)
 		if (data->a.stack[data->a.size - 1] < data->middle_num)
 			ft_reverse_rotate(data, 'a', TRUE);
 		else if (data->a.stack[0] < data->middle_num)
+		{
 			ft_push(data, 'b');
+			is_rr_from_a(data);
+		}
 		else
 			ft_rotate(data, 'a', TRUE);
 	}
