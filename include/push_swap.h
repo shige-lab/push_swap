@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/22 00:51:01 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/23 02:32:55 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ typedef struct s_struct
 	int		min_num;
 	int		max_num;
 	int		middle_num;
-	int		middle_index;
+	int		middle_index; 
+	int		quarter_index;
+	int		q3_4_index;
+	int		sorted_index;
 }	t_struct;
 
 // !修正必須
@@ -53,6 +56,8 @@ void	get_standard_value_3(t_stack *stack);
 t_bool	is_same_number(t_struct data, int number, int number_location);
 t_bool	sort_s(t_struct *data, int number, int number_location);
 void	push_a_from_min(t_struct *data, int i);
+void	push_a_from_min2(t_struct *data);
+void	push_quater_to_b(t_struct *data);
 void	ft_push_front(int *data, int data_size, int insert);
 void	ft_pop_front(int *data, int data_size); 
 t_bool	sort_is_correct(t_struct *data);

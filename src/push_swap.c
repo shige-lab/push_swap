@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/22 00:06:18 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/23 02:26:03 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,11 +95,9 @@ void	push_swap_under_6(t_struct *data)
 
 void	push_swap_over_7(t_struct *data)
 {
-	while (data->a.size != data->total_size - data->middle_index)
+	while (data->a.size != data->total_size - data->q3_4_index)
 	{
-		if (data->a.stack[data->a.size - 1] < data->middle_num)
-			ft_reverse_rotate(data, 'a', TRUE);
-		else if (data->a.stack[0] < data->middle_num)
+		if (data->a.stack[0] < data->s.stack[data->q3_4_index])
 		{
 			ft_push(data, 'b');
 			is_rr_from_a(data);
@@ -107,10 +105,10 @@ void	push_swap_over_7(t_struct *data)
 		else
 			ft_rotate(data, 'a', TRUE);
 	}
-	push_a_from_min(data, 0);
-	while (data->a.size != data->middle_index)
-			ft_push(data, 'b');
-	push_a_from_min(data, data->middle_index);
+	// push_a_from_min(data, 0);
+	push_a_from_min2(data);
+	push_quater_to_b(data);
+	// push_a_from_min(data, data->middle_index);
 	// printf(" a_size = %d\n",data->a.size, data->middle_index);
 }
 

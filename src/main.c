@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:47:23 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/21 23:01:29 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/23 03:10:51 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,33 @@ int	main(int argc, char **argv)
 	data.a.size = data.total_size;
 	put_argv_to_a(&data, argv);
 	push_swap(&data);
-	// int i = 0;
+	
+	// printf("B\n");
 	// int j = 0;
-	// while (i < data.total_size)
+	// while (j < data.b.size)
+	// {
+	// 	printf("%d\n",data.b.stack[j]);
+	// 	j++;
+	// }
+	
+	// printf("A\n");
+	// int i = 0;
+	// while (i < data.a.size)
 	// {
 	// 	printf("%d\n",data.a.stack[i]);
 	// 	i++;
 	// }
-	// printf("B\n");
-	// while (j < data.total_size)
+	
+	// printf("S\n");
+	// int k = 0;
+	// while (k < 13)
 	// {
-	// 	printf("%d\n",data.b.stack[j]);
-	// 	j++;
-	// } 
+	// 	printf("%d\n",data.s.stack[k]);
+	// 	k++;
+	// }
+	// printf(" a_size = %d\n",data.a.size);
+	// printf(" b_size = %d\n",data.b.size);
+	// printf(" sorted = %d\n",data.sorted_index);
 	ft_free_stacks(&data);
 	// system ("leaks push_swap");
 	return (0);
