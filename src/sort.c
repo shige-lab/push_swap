@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 00:48:06 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/20 21:43:38 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:06:07 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,3 @@ t_bool	sort_s(t_struct *data, int number, int number_location)
 	data->s.stack[i] = number;
 	return (TRUE);
 }
-
-// void	push_half_to_b(t_struct *data)
-// {
-// 	while (data->a.size != data->total_size / 2)
-// 			ft_push(data, 'b');
-// }

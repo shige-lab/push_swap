@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/23 02:26:03 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/24 20:35:23 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,102 +14,115 @@
 
 void	push_swap_3(t_struct *data)
 {
-	t_stack	a;
 	int		*a_stack;
+	int		max;
+	int		min;
 
-	get_standard_value_3(&data->a);
-	a = data->a;
-	a_stack = a.stack;
-	if (a_stack[1] == a.min_num && a_stack[2] == a.max_num)
+	a_stack = data->a.stack;
+	max = data->s.stack[data->total_size - 1];
+	min = data->s.stack[data->b.size];
+	if (a_stack[1] == min && a_stack[2] == max)
 		ft_swap(data, 'a', TRUE);
-	else if (a_stack[2] == a.min_num && a_stack[0] == a.max_num)
+	else if (a_stack[2] == min && a_stack[0] == max)
 	{
 		ft_swap(data, 'a', TRUE);
 		ft_reverse_rotate(data, 'a', TRUE);
 	}
-	else if (a_stack[1] == a.min_num && a_stack[0] == a.max_num)
+	else if (a_stack[1] == min && a_stack[0] == max)
 		ft_rotate(data, 'a', TRUE);
-	else if (a_stack[0] == a.min_num && a_stack[1] == a.max_num)
+	else if (a_stack[0] == min && a_stack[1] == max)
 	{
 		ft_swap(data, 'a', TRUE);
 		ft_rotate(data, 'a', TRUE);
 	}
-	else if (a_stack[2] == a.min_num && a_stack[1] == a.max_num)
+	else if (a_stack[2] == min && a_stack[1] == max)
 		ft_reverse_rotate(data, 'a', TRUE);
 }
 
 void	push_swap_3_reverse(t_struct *data)
 {
-	t_stack	b;
 	int		*b_stack;
+	int		b_max;
 
-	get_standard_value_3(&data->b);
-	b = data->b;
-	b_stack = b.stack;
-	if (b_stack[2] == b.min_num && b_stack[1] == b.max_num)
-		ft_swap(data, 'b', TRUE);
-	else if (b_stack[0] == b.min_num && b_stack[2] == b.max_num)
+	b_stack = data->b.stack;
+	b_max = data->s.stack[2];
+	if (b_max == b_stack[2])
 	{
-		ft_swap(data, 'b', TRUE);
 		ft_reverse_rotate(data, 'b', TRUE);
+		ft_push(data, 'a');
 	}
-	else if (b_stack[0] == b.min_num && b_stack[1] == b.max_num)
-		ft_rotate(data, 'b', TRUE);
-	else if (b_stack[1] == b.min_num && b_stack[0] == b.max_num)
+	else if (b_max == b_stack[1])
 	{
+
 		ft_swap(data, 'b', TRUE);
-		ft_rotate(data, 'b', TRUE);
+		ft_push(data, 'a');
 	}
-	else if (b_stack[1] == b.min_num && b_stack[2] == b.max_num)
-		ft_reverse_rotate(data, 'a', TRUE);
+	else 
+		ft_push(data, 'a');
+	ft_push(data, 'a');
 }
 
 void	push_swap_under_6(t_struct *data)
 {
+	int	a_stack_min;
+
+	a_stack_min = data->s.stack[data->total_size - 3];
 	while (data->a.size != 3)
 	{
-		if (data->a.stack[data->a.size - 1] < data->middle_num)
+		if (data->a.stack[data->a.size - 1] < a_stack_min)
 			ft_reverse_rotate(data, 'a', TRUE);
-		else if (data->a.stack[0] < data->middle_num)
-			ft_push(data, 'b'); 
-		else
-			ft_rotate(data, 'a', TRUE);
-	}
-	push_swap_3(data);
-	if (data->b.size == 2)
-	{
-		if (data->b.stack[0] == data->min_num)
-			ft_swap(data, 'b', TRUE);
-		ft_push(data, 'a');
-	}
-	if (data->b.size == 3)
-	{
-		push_swap_3_reverse(data);
-		ft_push(data, 'a');
-		ft_push(data, 'a');
-	}
-	ft_push(data, 'a');
-	if (data->a.stack[0] > data->a.stack[1])
-		ft_swap(data, 'a', TRUE);
-}
-
-void	push_swap_over_7(t_struct *data)
-{
-	while (data->a.size != data->total_size - data->q3_4_index)
-	{
-		if (data->a.stack[0] < data->s.stack[data->q3_4_index])
+		if (data->a.stack[0] < a_stack_min)
 		{
 			ft_push(data, 'b');
-			is_rr_from_a(data);
+			if (data->b.stack[0] < data->b.stack[1] && data->b.size != 1)
+				ft_swap(data, 'b', TRUE);
 		}
 		else
 			ft_rotate(data, 'a', TRUE);
 	}
-	// push_a_from_min(data, 0);
-	push_a_from_min2(data);
-	push_quater_to_b(data);
-	// push_a_from_min(data, data->middle_index);
-	// printf(" a_size = %d\n",data->a.size, data->middle_index);
+	push_swap_3(data);
+	while (data->b.size)
+		ft_push(data, 'a');
+	if (data->a.stack[0] > data->a.stack[1])
+		ft_swap(data, 'a', TRUE);
+}
+void	push_swap_under_50(t_struct *data)
+{
+	int	ra_count;
+
+	ra_count = 0;
+	split_to_4block_by_size(data);
+	push_small_2block_to_bottom_of_a(data);
+	while (data->a.stack[0] < data->s.stack[data->index_3_4])
+	{
+		push_quater_to_b(data);
+	}
+	while (data->b.size > 0)
+	{
+		pb_and_sort_from_small(data, &ra_count, 0);
+		ra_minimum_numbers(data);
+	}
+	while (data->a.stack[0] != data->s.stack[0])
+		push_quater_to_b(data);
+	while (data->b.size > 0)
+	{
+		pb_and_sort_from_small(data, &ra_count, 0);
+		ra_minimum_numbers(data);
+	}
+}
+
+void	push_swap_over_7(t_struct *data)
+{
+	split_to_4block_by_size(data);
+	push_small_2block_to_bottom_of_a(data);
+	while (data->a.stack[0] < data->s.stack[data->index_3_4])
+	{
+		push_quater_to_b(data);
+	}
+	push_small_1block_to_bottom_of_a(data, data->index_3_4);
+	while (data->a.stack[0] != data->s.stack[0])
+		push_quater_to_b(data);
+	push_small_1block_to_bottom_of_a(data, data->total_size);
 }
 
 void	push_swap(t_struct *data)
@@ -124,6 +137,8 @@ void	push_swap(t_struct *data)
 		push_swap_3(data);
 	else if (data->total_size < 7)
 		push_swap_under_6(data);
+	else if (data->total_size < 50)
+		push_swap_under_50(data);
 	else
 		push_swap_over_7(data);
 }
