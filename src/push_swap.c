@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/24 20:35:23 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 11:32:04 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,10 @@ void	push_swap_3_reverse(t_struct *data)
 	}
 	else if (b_max == b_stack[1])
 	{
-
 		ft_swap(data, 'b', TRUE);
 		ft_push(data, 'a');
 	}
-	else 
+	else
 		ft_push(data, 'a');
 	ft_push(data, 'a');
 }
@@ -86,6 +85,7 @@ void	push_swap_under_6(t_struct *data)
 	if (data->a.stack[0] > data->a.stack[1])
 		ft_swap(data, 'a', TRUE);
 }
+
 void	push_swap_under_50(t_struct *data)
 {
 	int	ra_count;

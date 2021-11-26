@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 00:48:06 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/24 18:06:07 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 11:32:25 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	ft_push_location_p(int *data, int data_size, int insert, int p)
 	if (data == NULL)
 		return ;
 	i = data_size;
-
 	while (i > p)
 	{
 		data[i] = data[i - 1];

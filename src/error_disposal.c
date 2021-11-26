@@ -6,12 +6,11 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 22:32:15 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/24 17:37:05 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 11:29:53 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 void	error_exit(char *message)
 {

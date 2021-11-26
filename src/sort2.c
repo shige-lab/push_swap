@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/24 20:34:29 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 11:32:42 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,10 +158,10 @@ void	split_to_4block_by_size(t_struct *data)
 void	push_quater_to_b(t_struct *data)
 {
 	if (data->a.stack[0] == data->s.stack[data->sorted_index])
-		{
-			ft_rotate(data, 'a', TRUE);
-			data->sorted_index++;
-		}
-		else
-			ft_push(data, 'b');
+	{
+		ft_rotate(data, 'a', TRUE);
+		data->sorted_index++;
+	}
+	else
+		ft_push(data, 'b');
 }
