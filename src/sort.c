@@ -6,11 +6,11 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 00:48:06 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 11:32:25 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 21:53:50 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 static int	front_correct_position(t_struct *data)
 {
 	int	i;
@@ -23,7 +23,7 @@ static int	front_correct_position(t_struct *data)
 
 void	sort_a_front(t_struct *data)
 {
-	int front_location;
+	int	front_location;
 
 	if (data->a.stack[0] == data->max_num)
 	{

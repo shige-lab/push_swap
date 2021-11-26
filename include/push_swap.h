@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 16:10:13 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 21:50:32 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_struct
 	int		index_3_4;
 	int		index_1_8;
 	int		sorted_index;
+	int		ra_count;
+	int		rb_count;
 }	t_struct;
 
 // !修正必須
@@ -73,9 +75,12 @@ void	sort_a_front(t_struct *data);
 void	push_swap(t_struct *data);
 
 void	split_to_4block_by_size(t_struct *data);
-void	push_small_2block_to_bottom_of_a(t_struct *data);
-void	push_small_1block_to_bottom_of_a(t_struct *data, int base);
+void	push_small_2block_to_bottom_of_a(t_struct *data, int d);
+void	push_small_1block_to_bottom_of_a(t_struct *data, int d);
 void	ra_minimum_numbers(t_struct *data);
-void	pb_and_sort_from_small(t_struct *data, int *count, int flag);
+void	pb_and_sort_from_small(t_struct *data, int flag);
+void	push_quater_to_b(t_struct *data);
+t_bool	is_rr(t_struct *data);
+void	is_rr_from_a(t_struct *data);
 
 #endif

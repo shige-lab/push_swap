@@ -6,11 +6,11 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 16:29:14 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 20:59:38 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	push_swap_3(t_struct *data)
 {
@@ -86,43 +86,26 @@ void	push_swap_under_6(t_struct *data)
 		ft_swap(data, 'a', TRUE);
 }
 
-void	push_swap_under_50(t_struct *data)
+void	push_swap_over_7(t_struct *data)
 {
-	int	ra_count;
+	int	 denominator;
 
-	ra_count = 0;
+	if (data->total_size >= 300)
+		denominator = 3;
+	else if (data->total_size >= 100)
+		denominator = 2;
+	else
+		denominator = 1;
 	split_to_4block_by_size(data);
-	push_small_2block_to_bottom_of_a(data);
+	push_small_2block_to_bottom_of_a(data, denominator);
 	while (data->a.stack[0] < data->s.stack[data->index_3_4])
 	{
 		push_quater_to_b(data);
 	}
-	while (data->b.size > 0)
-	{
-		pb_and_sort_from_small(data, &ra_count, 0);
-		ra_minimum_numbers(data);
-	}
+	push_small_1block_to_bottom_of_a(data, denominator);
 	while (data->a.stack[0] != data->s.stack[0])
 		push_quater_to_b(data);
-	while (data->b.size > 0)
-	{
-		pb_and_sort_from_small(data, &ra_count, 0);
-		ra_minimum_numbers(data);
-	}
-}
-
-void	push_swap_over_7(t_struct *data)
-{
-	split_to_4block_by_size(data);
-	push_small_2block_to_bottom_of_a(data);
-	// while (data->a.stack[0] < data->s.stack[data->index_3_4])
-	// {
-	// 	push_quater_to_b(data);
-	// }
-	// push_small_1block_to_bottom_of_a(data, data->index_3_4);
-	// while (data->a.stack[0] != data->s.stack[0])
-	// 	push_quater_to_b(data);
-	// push_small_1block_to_bottom_of_a(data, data->total_size);
+	push_small_1block_to_bottom_of_a(data, denominator);
 }
 
 void	push_swap(t_struct *data)
@@ -131,14 +114,11 @@ void	push_swap(t_struct *data)
 	{
 		if (data->a.stack[0] == data->max_num)
 			ft_swap(data, 'a', TRUE);
-		return ;
 	}
-	if (data->total_size == 3)
+	else if (data->total_size == 3)
 		push_swap_3(data);
-	else if (data->total_size < 7)
+	else if (data->total_size <= 6)
 		push_swap_under_6(data);
-	else if (data->total_size < 50)
-		push_swap_under_50(data);
 	else
 		push_swap_over_7(data);
 }

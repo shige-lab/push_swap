@@ -6,11 +6,11 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 22:39:55 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/19 02:21:20 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 20:59:38 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	ft_push_front(int *data, int data_size, int insert)
 {

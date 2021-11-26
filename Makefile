@@ -8,23 +8,25 @@ SRCS = src/main.c \
 		src/sort_disposal.c \
 		src/sort.c \
 		src/sort2.c \
+		src/sort3.c \
 		src/push_swap.c \
 		src/ft_push_front.c \
 		src/sort_is_correct.c \
 		src/error_disposal.c
 OBJS = $(SRCS:%.c=%.o)
+INCLUDE = -I include/
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJS) $(LIBFT)
 
 $(LIBFT): empty
 	make -C libft
 empty:
 
 %.o:%.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 clean:
 	rm -f $(OBJS)
 	make clean -C libft

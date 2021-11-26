@@ -6,11 +6,11 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 22:04:22 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/24 20:33:12 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 20:59:38 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	ft_swap(t_struct *data, char a_b, t_bool put_message)
 {
