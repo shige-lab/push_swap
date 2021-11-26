@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 11:32:42 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:18:18 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ void	pb_and_sort_from_small(t_struct *data, int *count, int flag)
 	while (data->a.stack[data->a.size - 1] > data->b.stack[0] && *count > 0)
 	{
 		ft_reverse_rotate(data, 'a', TRUE);
-		*count-= 1;
+		*count -= 1;
 	}
 	while (data->a.stack[1] < data->b.stack[0]
-		 &&( data->a.stack[1] > data->s.stack[2] || flag))
+		&& (data->a.stack[1] > data->s.stack[2] || flag))
 	{
 		ft_rotate(data, 'a', TRUE);
-		*count+= 1;
+		*count += 1;
 	}
 	ft_push(data, 'a');
 	if (data->a.stack[1] < data->a.stack[0]
@@ -67,11 +67,10 @@ void	pb_and_sort_from_small(t_struct *data, int *count, int flag)
 void	sort_half_of_block(t_struct *data, int *ra_count, int *rb_count, int base)
 {
 	if (data->b.stack[0] >= data->s.stack[base - data->index_1_8])
-	
 	{
 		if (is_rr(data) == FALSE)
 			ft_rotate(data, 'b', TRUE);
-		*rb_count+= 1;
+		*rb_count += 1;
 	}
 	else
 	{
@@ -80,6 +79,21 @@ void	sort_half_of_block(t_struct *data, int *ra_count, int *rb_count, int base)
 			pb_and_sort_from_small(data, &*ra_count, 1);
 		else
 			pb_and_sort_from_small(data, &*ra_count, 0);
+	}
+}
+
+void	test(t_struct *data, int *ra_count, int *rb_count, int standard)
+{
+	if (data->b.stack[0] > standard)
+	{
+		if (is_rr(data) == FALSE)
+			ft_rotate(data, 'b', TRUE);
+		*rb_count += 1;
+	}
+	else
+	{
+		ra_minimum_numbers(data);
+		pb_and_sort_from_small(data, &*ra_count, 0);
 	}
 }
 
@@ -102,22 +116,20 @@ void	push_small_2block_to_bottom_of_a(t_struct *data)
 			else if (data->b.stack[data->b.size - 1] > data->b.stack[0])
 				ft_reverse_rotate(data, 'b', TRUE);
 			else
-				break;
+				break ;
 			rb_count--;
 		}
 		pb_and_sort_from_small(data, &ra_count, 1);
 		ra_minimum_numbers(data);
 	}
-	push_small_1block_to_bottom_of_a(data, data->middle_index);
+	// push_small_1block_to_bottom_of_a(data, data->middle_index);
 }
- 
-void	push_small_1block_to_bottom_of_a(t_struct *data, int base)
+
+void	push_small_1block_to_bottom_of_a1(t_struct *data, int base)
 {
 	int	ra_count;
 	int	rb_count;
-	int	i;
 
-	i = 0;
 	ra_count = 0;
 	rb_count = 0;
 	while (data->b.size != data->index_1_8)
@@ -128,6 +140,44 @@ void	push_small_1block_to_bottom_of_a(t_struct *data, int base)
 		pb_and_sort_from_small(data, &ra_count, 0);
 		ra_minimum_numbers(data);
 	}
+}
+
+void	push_small_1block_to_bottom_of_a(t_struct *data, int base)
+{
+	int	ra_count;
+	int	rb_count;
+	int	b_size;
+	int	i;
+
+	i = 0;
+	ra_count = 0;
+	rb_count = 0;
+	while (i < 1)
+	{
+		b_size = data->b.size;
+		printf("s = %d\n",data->s.stack[data->sorted_index- 1]);
+		printf("si = %d\n",data->sorted_index - 1);
+		printf("b_size = %d\n",b_size);
+		base = data->s.stack[data->sorted_index - 1 + data->index_1_8 / 2];
+		int a = 0;
+		while (data->b.size > b_size - data->index_1_8 / 2)
+		{
+			test(data, &ra_count, &rb_count, base);
+			if (a++  == 30)
+			{
+				printf("roop\n");
+				break;
+			}
+		}
+		ra_minimum_numbers(data);
+		i++;
+		printf("b = %d\n",base);
+	}
+	// while (data->b.size != 0)
+	// {
+	// 	pb_and_sort_from_small(data, &ra_count, 0); 
+	// 	ra_minimum_numbers(data);
+	// }
 }
 
 void	split_to_4block_by_size(t_struct *data)

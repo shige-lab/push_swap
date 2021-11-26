@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:47:23 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 11:31:21 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:36:06 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ int	main(int argc, char **argv)
 	// 	j++;
 	// }
 	
-	// fprintf(stderr, "A\n");
-	// int i = 0;
-	// while (i < data.a.size)
-	// {
-	// 	fprintf(stderr, "%d\n",data.a.stack[i]);
-	// 	i++;
-	// }
+	fprintf(stderr, "A\n");
+	int i = 0;
+	while (i < data.a.size)
+	{
+		fprintf(stderr, "%d\n",data.a.stack[i]);
+		i++;
+	}
 	
 	// fprintf(stderr, "S\n");
 	// int k = 0;
@@ -96,10 +96,12 @@ int	main(int argc, char **argv)
 	// 	k++;
 	// }
 	// fprintf(stderr, "a_size = %d\n",data.a.size);
-	// fprintf(stderr, "b_size = %d\n",data.b.size);
-	// fprintf(stderr, " sorted = %d\n",data.sorted_index);
+	fprintf(stderr, "b_size = %d\n",data.b.size);
+	fprintf(stderr, " sorted = %d\n",data.sorted_index);
+	fprintf(stderr, " sorted_num = %d\n",data.s.stack[data.sorted_index]);
+	fprintf(stderr, " sorted_num = %d\n",data.s.stack[data.sorted_index + 1]);
 	// fprintf(stderr, " last_s = %d\n",data.s.stack[data.sorted_index]);
-	// fprintf(stderr, " s = %d\n",data.index_1_8;
+	fprintf(stderr, " 1_8_2 = %d\n",data.index_1_8 / 2);
 	// fprintf(stderr, " b = %d\n",data.index_1_4 - (data.index_1_4/ 2));
 	// fprintf(stderr, " 1_4 - 1_8 = %d\n",data.index_1_4 - data.index_1_8);
 	// fprintf(stderr, " 1_4 + _1_4/2 = %d\n",data.index_1_4 + data.index_1_4 / 2);
