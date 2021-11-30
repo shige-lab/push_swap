@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort2.c                                            :+:      :+:    :+:   */
+/*   sort1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 11:24:57 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 00:36:12 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ void	push_small_2block_to_bottom_of_a(t_struct *data, int d)
 		pb_and_sort_from_small(data, 1);
 		ra_minimum_numbers(data);
 	}
-	push_small_1block_to_bottom_of_a(data, d);
+	push_1block_to_bottom_of_a(data, d);
 }
 
-void	push_small_1block_to_bottom_of_a(t_struct *data, int d)
+void	push_1block_to_bottom_of_a(t_struct *data, int d)
 {
 	int	b_size;
 	int	base;

@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 11:28:23 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 00:36:12 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,6 @@ void	push_swap_3(t_struct *data)
 	}
 	else if (a_stack[2] == min && a_stack[1] == max)
 		ft_reverse_rotate(data, 'a', TRUE);
-}
-
-void	push_swap_3_reverse(t_struct *data)
-{
-	int		*b_stack;
-	int		b_max;
-
-	b_stack = data->b.stack;
-	b_max = data->s.stack[2];
-	if (b_max == b_stack[2])
-	{
-		ft_reverse_rotate(data, 'b', TRUE);
-		ft_push(data, 'a', TRUE);
-	}
-	else if (b_max == b_stack[1])
-	{
-		ft_swap(data, 'b', TRUE);
-		ft_push(data, 'a', TRUE);
-	}
-	else
-		ft_push(data, 'a', TRUE);
-	ft_push(data, 'a', TRUE);
 }
 
 void	push_swap_under_6(t_struct *data)
@@ -102,10 +80,10 @@ void	push_swap_over_7(t_struct *data)
 	{
 		push_quater_to_b(data);
 	}
-	push_small_1block_to_bottom_of_a(data, denominator);
+	push_1block_to_bottom_of_a(data, denominator);
 	while (data->a.stack[0] != data->s.stack[0])
 		push_quater_to_b(data);
-	push_small_1block_to_bottom_of_a(data, denominator);
+	push_1block_to_bottom_of_a(data, denominator);
 }
 
 void	push_swap(t_struct *data)
