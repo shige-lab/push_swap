@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 22:04:22 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 20:59:38 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 11:21:58 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_swap(t_struct *data, char a_b, t_bool put_message)
 	}
 }
 
-void	ft_push(t_struct *data, char a_b)
+void	ft_push(t_struct *data, char a_b, t_bool put_message)
 {
 	if (a_b == 'a')
 	{
@@ -42,7 +42,8 @@ void	ft_push(t_struct *data, char a_b)
 		data->a.size++;
 		ft_pop_front(data->b.stack, data->b.size);
 		data->b.size--;
-		ft_putendl_fd("pa", 1);
+		if (put_message == TRUE)
+			ft_putendl_fd("pa", 1);
 	}
 	if (a_b == 'b')
 	{
@@ -50,7 +51,8 @@ void	ft_push(t_struct *data, char a_b)
 		data->b.size++;
 		ft_pop_front(data->a.stack, data->a.size);
 		data->a.size--;
-		ft_putendl_fd("pb", 1);
+		if (put_message == TRUE)
+			ft_putendl_fd("pb", 1);
 	}
 }
 
@@ -86,24 +88,27 @@ void	ft_reverse_rotate(t_struct *data, char a_b, t_bool put_message)
 	}
 }
 
-void	ft_ss_rr_rrr(t_struct *data, char *ss_rr_rrr)
+void	ft_ss_rr_rrr(t_struct *data, char *ss_rr_rrr, t_bool put_message)
 {
 	if (ft_strncmp(ss_rr_rrr, "ss", 3) == 0)
 	{
 		ft_swap(data, 'a', FALSE);
 		ft_swap(data, 'b', FALSE);
-		ft_putendl_fd("ss", 1);
+		if (put_message == TRUE)
+			ft_putendl_fd("ss", 1);
 	}
 	if (ft_strncmp(ss_rr_rrr, "rr", 3) == 0)
 	{
 		ft_rotate(data, 'a', FALSE);
 		ft_rotate(data, 'b', FALSE);
-		ft_putendl_fd("rr", 1);
+		if (put_message == TRUE)
+			ft_putendl_fd("rr", 1);
 	}
 	if (ft_strncmp(ss_rr_rrr, "rrr", 3) == 0)
 	{
 		ft_reverse_rotate(data, 'a', FALSE);
 		ft_reverse_rotate(data, 'b', FALSE);
-		ft_putendl_fd("rrr", 1);
+		if (put_message == TRUE)
+			ft_putendl_fd("rrr", 1);
 	}
 }

@@ -6,9 +6,11 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 21:52:50 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 11:24:57 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	pb_and_sort_from_small(t_struct *data, int flag)
 {
@@ -26,7 +28,7 @@ void	pb_and_sort_from_small(t_struct *data, int flag)
 		ft_rotate(data, 'a', TRUE);
 		data->ra_count += 1;
 	}
-	ft_push(data, 'a');
+	ft_push(data, 'a', TRUE);
 	if (a_stack[1] < a_stack[0]
 		 && (a_stack[1] != data->s.stack[0] || flag))
 		ft_swap(data, 'a', TRUE);
@@ -101,7 +103,7 @@ void	split_to_4block_by_size(t_struct *data)
 	{
 		if (data->a.stack[0] < data->s.stack[data->index_3_4])
 		{
-			ft_push(data, 'b');
+			ft_push(data, 'b', TRUE);
 			is_rr_from_a(data);
 		}
 		else
@@ -111,7 +113,7 @@ void	split_to_4block_by_size(t_struct *data)
 	{
 		if (data->b.stack[0] >= data->middle_num)
 		{
-			ft_push(data, 'a');
+			ft_push(data, 'a', TRUE);
 		}
 		else if (data->b.stack[0] >= data->s.stack[data->index_1_4])
 		{

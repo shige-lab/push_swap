@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 20:59:38 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 11:28:23 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,16 @@ void	push_swap_3_reverse(t_struct *data)
 	if (b_max == b_stack[2])
 	{
 		ft_reverse_rotate(data, 'b', TRUE);
-		ft_push(data, 'a');
+		ft_push(data, 'a', TRUE);
 	}
 	else if (b_max == b_stack[1])
 	{
 		ft_swap(data, 'b', TRUE);
-		ft_push(data, 'a');
+		ft_push(data, 'a', TRUE);
 	}
 	else
-		ft_push(data, 'a');
-	ft_push(data, 'a');
+		ft_push(data, 'a', TRUE);
+	ft_push(data, 'a', TRUE);
 }
 
 void	push_swap_under_6(t_struct *data)
@@ -72,7 +72,7 @@ void	push_swap_under_6(t_struct *data)
 			ft_reverse_rotate(data, 'a', TRUE);
 		if (data->a.stack[0] < a_stack_min)
 		{
-			ft_push(data, 'b');
+			ft_push(data, 'b', TRUE);
 			if (data->b.stack[0] < data->b.stack[1] && data->b.size != 1)
 				ft_swap(data, 'b', TRUE);
 		}
@@ -81,7 +81,7 @@ void	push_swap_under_6(t_struct *data)
 	}
 	push_swap_3(data);
 	while (data->b.size)
-		ft_push(data, 'a');
+		ft_push(data, 'a', TRUE);
 	if (data->a.stack[0] > data->a.stack[1])
 		ft_swap(data, 'a', TRUE);
 }

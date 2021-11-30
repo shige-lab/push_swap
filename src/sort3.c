@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 20:38:49 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 21:54:10 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 11:25:53 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	push_quater_to_b(t_struct *data)
 		data->sorted_index++;
 	}
 	else
-		ft_push(data, 'b');
+		ft_push(data, 'b', TRUE);
 }
 
 t_bool	is_rr(t_struct *data)
 {
 	if (data->a.stack[0] == data->s.stack[data->sorted_index])
 	{
-		ft_ss_rr_rrr(data, "rr");
+		ft_ss_rr_rrr(data, "rr", TRUE);
 		data->sorted_index++;
 		return (TRUE);
 	}
@@ -40,7 +40,7 @@ void	is_rr_from_a(t_struct *data)
 	{
 		if (!(data->a.stack[0] < data->index_3_4))
 		{
-			ft_ss_rr_rrr(data, "rr");
+			ft_ss_rr_rrr(data, "rr", TRUE);
 		}
 		else
 			ft_rotate(data, 'b', TRUE);
