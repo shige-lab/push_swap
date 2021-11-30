@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 00:39:40 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 01:11:38 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,10 @@ typedef struct s_struct
 	int		rb_count;
 }	t_struct;
 
-void	is_rr_from_a(t_struct *data);
 void	error_exit(char *message);
 void	error_exit_with_free(t_struct *data, char *message);
 void	get_standard_value(t_struct *data);
-t_bool	sort_s(t_struct *data, int number, int number_location);
+t_bool	sort_s_stock(t_struct *data, int number, int number_location);
 void	ft_push_front(int *data, int data_size, int insert);
 void	ft_pop_front(int *data, int data_size);
 void	ft_rotate_front_to_end(int *data, int data_size);
@@ -68,11 +67,11 @@ void	push_1block_to_bottom_of_a(t_struct *data, int d);
 void	ra_minimum_numbers(t_struct *data);
 void	pb_and_sort_from_small(t_struct *data, int flag);
 void	push_quater_to_b(t_struct *data);
-t_bool	is_rr(t_struct *data);
+t_bool	is_rr_from_b(t_struct *data);
 void	is_rr_from_a(t_struct *data);
 void	put_argv_to_a(t_struct *data, char **argv);
 void	ft_free_stacks(t_struct data);
 int		diff(t_struct data, int index);
 char	*get_next_line(int fd);
 
-#endif
+#endif 

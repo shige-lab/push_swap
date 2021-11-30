@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_s_stock.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 00:48:06 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 19:09:05 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 00:44:54 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_push_location_p(int *data, int data_size, int insert, int p)
 	data[i] = insert;
 }
 
-t_bool	sort_s(t_struct *data, int number, int number_location)
+t_bool	sort_s_stock(t_struct *data, int number, int number_location)
 {
 	int	i;
 

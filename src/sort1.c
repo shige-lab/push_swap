@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 00:36:12 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 01:15:00 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	sort_half_of_block(t_struct *data, int standard, int flag)
 {
 	if (data->b.stack[0] > standard)
 	{
-		if (is_rr(data) == FALSE)
+		if (is_rr_from_b(data) == FALSE)
 			ft_rotate(data, 'b', TRUE);
 		data->rb_count += 1;
 	}

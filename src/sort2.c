@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort3.c                                            :+:      :+:    :+:   */
+/*   sort2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 20:38:49 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 11:25:53 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 01:12:15 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	push_quater_to_b(t_struct *data)
 		ft_push(data, 'b', TRUE);
 }
 
-t_bool	is_rr(t_struct *data)
+t_bool	is_rr_from_b(t_struct *data)
 {
 	if (data->a.stack[0] == data->s.stack[data->sorted_index])
 	{

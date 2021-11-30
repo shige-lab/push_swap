@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 00:36:12 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 00:57:43 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,7 @@ void	push_swap_over_7(t_struct *data)
 	split_to_4block_by_size(data);
 	push_small_2block_to_bottom_of_a(data, denominator);
 	while (data->a.stack[0] < data->s.stack[data->index_3_4])
-	{
 		push_quater_to_b(data);
-	}
 	push_1block_to_bottom_of_a(data, denominator);
 	while (data->a.stack[0] != data->s.stack[0])
 		push_quater_to_b(data);
