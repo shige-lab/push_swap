@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_front.c                                    :+:      :+:    :+:   */
+/*   sort_disposal_parts.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 22:39:55 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 20:59:38 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:19:52 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,6 @@ void	ft_pop_front(int *data, int data_size)
 		i++;
 	}
 	data[i] = 0;
-}
-
-void	ft_reverse(int *data, int data_size)
-{
-	int	i;
-	int	tmp;
-
-	if (data == NULL)
-		return ;
-	i = 0;
-	while (i < data_size / 2)
-	{
-		tmp = data[i];
-		data[i] = data[data_size - 1 - i];
-		data[data_size - 1 - i] = tmp;
-		i++;
-	}
 }
 
 void	ft_rotate_front_to_end(int *data, int data_size)

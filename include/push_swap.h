@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 11:22:30 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:16:07 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ void	pb_and_sort_from_small(t_struct *data, int flag);
 void	push_quater_to_b(t_struct *data);
 t_bool	is_rr(t_struct *data);
 void	is_rr_from_a(t_struct *data);
+void	put_argv_to_a(t_struct *data, char **argv);
+void	ft_free_stacks(t_struct data);
+int	diff(t_struct data, int index);
 
 
 char	*get_next_line(int fd);
