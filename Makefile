@@ -1,4 +1,5 @@
 NAME = push_swap
+CHECKER = checker
 LIBFT = libft/libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -29,8 +30,8 @@ all: $(NAME)
 $(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJS) $(LIBFT)
 
-checker: $(LIBFT)
-	$(CC) $(CFLAGS) $(INCLUDE) -o ft_checker $(CSRCS) $(LIBFT)
+$(CHECKER): $(LIBFT)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $(CHECKER) $(CSRCS) $(LIBFT)
 
 $(LIBFT): empty
 	make -C libft
@@ -41,6 +42,7 @@ empty:
 clean:
 	rm -f $(OBJS)
 	make clean -C libft
+	rm -f $(CHECKER)
 fclean: clean
 	rm -f $(NAME)
 	rm -f $(LIBFT)
