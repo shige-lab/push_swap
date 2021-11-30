@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 22:32:15 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/26 21:53:26 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:34:58 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	error_exit(char *message)
 
 void	error_exit_with_free(t_struct *data, char *message)
 {
-	free(data->a.stack);
-	free(data->b.stack);
-	free(data->s.stack);
+	ft_free_stacks(*data);
 	error_exit(message);
 }

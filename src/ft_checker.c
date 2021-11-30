@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 21:53:09 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 19:29:06 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:31:39 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ int	main(int argc, char **argv)
 	else
 		ft_putendl_fd("KO", 1);
 	ft_free_stacks(data);
-	// system("leaks ft_checker");
 	return (0);
 }

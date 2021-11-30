@@ -5,9 +5,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 SRCS =  src/function_for_main.c \
 		src/sort_disposal.c \
-		src/sort.c \
+		src/sort_s.c \
+		src/sort1.c \
 		src/sort2.c \
-		src/sort3.c \
 		src/push_swap.c \
 		src/sort_disposal_parts.c \
 		src/error_disposal.c \
@@ -16,9 +16,9 @@ CSRCS = src/get_next_line.c \
 		src/ft_checker.c \
 		src/function_for_main.c \
 		src/sort_disposal.c \
-		src/sort.c \
+		src/sort_s.c \
+		src/sort1.c \
 		src/sort2.c \
-		src/sort3.c \
 		src/push_swap.c \
 		src/sort_disposal_parts.c \
 		src/error_disposal.c
