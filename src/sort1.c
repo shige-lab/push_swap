@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 01:15:00 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 01:36:42 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	push_1block_to_bottom_of_a(t_struct *data, int d)
 	int	i;
 
 	i = 0;
-	while (i < (d * 2) - 1)
+	while (i < (d * 2) - 1 && d != 0)
 	{
 		b_size = data->b.size;
 		if (b_size <= data->index_1_8 / d)

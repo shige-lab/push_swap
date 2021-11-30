@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 00:57:43 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 01:45:15 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,10 @@ void	push_swap_over_7(t_struct *data)
 		denominator = 3;
 	else if (data->total_size >= 100)
 		denominator = 2;
-	else
+	else if (data->total_size >= 50)
 		denominator = 1;
+	else
+		denominator = 0;
 	split_to_4block_by_size(data);
 	push_small_2block_to_bottom_of_a(data, denominator);
 	while (data->a.stack[0] < data->s.stack[data->index_3_4])
