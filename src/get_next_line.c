@@ -6,14 +6,13 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 23:00:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/29 22:04:44 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:24:19 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-# define BUFFER_SIZE 5
 
-
+#define BUFFER_SIZE 5
 
 void	ft_free(char **p);
 int		split_by_n(char *total, char **line, char **save, char *location_n);

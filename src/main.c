@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:47:23 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 19:18:22 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:24:34 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int	main(int argc, char **argv)
 	put_argv_to_a(&data, argv);
 	push_swap(&data);
 	ft_free_stacks(data);
-	// system ("leaks push_swap");
 	return (0);
 }

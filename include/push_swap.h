@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 19:16:07 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:23:33 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	error_exit_with_free(t_struct *data, char *message);
 void	get_standard_value(t_struct *data);
 t_bool	sort_s(t_struct *data, int number, int number_location);
 void	ft_push_front(int *data, int data_size, int insert);
-void	ft_pop_front(int *data, int data_size); 
+void	ft_pop_front(int *data, int data_size);
 t_bool	sort_is_correct(t_struct *data);
 // 不要
 void	ft_reverse(int *data, int data_size);
@@ -78,8 +78,7 @@ t_bool	is_rr(t_struct *data);
 void	is_rr_from_a(t_struct *data);
 void	put_argv_to_a(t_struct *data, char **argv);
 void	ft_free_stacks(t_struct data);
-int	diff(t_struct data, int index);
-
+int		diff(t_struct data, int index);
 
 char	*get_next_line(int fd);
 
