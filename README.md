@@ -37,7 +37,7 @@ ARG=$(jot -r -s " " 100 -2147483648 2147483647); ./push_swap $ARG | wc -l
 
 正確にソートできているかは以下のコマンドで確認できる(make checkerで実行ファイルcheckerを作成可能)。
 
-ARG=$(jot -r -s " " 100 -2147483648 2147483647); ./push_swap $ARG ./checker $ARG
+ARG=$(jot -r -s " " 100 -2147483648 2147483647); ./push_swap $ARG | ./checker $ARG
 
 # 11個の専用の命令(課題文からの引用)
 sa : swap a - swap the first 2 elements at the top of stack a. Do nothing if there
