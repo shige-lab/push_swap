@@ -3,8 +3,7 @@
 42tokyoの課題で与えられた数値をソートするプログラムを作りました。
 
 
-流れ
-
+# 流れ
 ・n個の乱数(同数は無効)を引数で受ける。
 
 ・引数が有効な数字だけであるかを確認し、そうでなかった場合はプログラムを終了する。
@@ -16,14 +15,14 @@
 ・専用の命令を実施するごとに命令を出力する。
 
 
-使用可能関数
+# 使用可能関数
 ・write
 ・read
 ・malloc
 ・free
 ・exit
 
-
+# 使い方
 bashで実行可能
 
 実行ファイル名 push_swap(makeで作成可能)
@@ -38,8 +37,7 @@ ARG=$(jot -r -s " " 100 -2147483648 2147483647); ./push_swap $ARG | wc -l
 正確にソートできているかは以下のコマンドで確認できる(make checkerで実行ファイルcheckerを作成可能)。
 ARG=$(jot -r -s " " 100 -2147483648 2147483647); ./push_swap $ARG ./checker $ARG
 
-11個の専用の命令(課題文からの引用)
-
+# 11個の専用の命令(課題文からの引用)
 sa : swap a - swap the first 2 elements at the top of stack a. Do nothing if there
 is only one or no elements).
 
