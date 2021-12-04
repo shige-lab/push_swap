@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:56:43 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 14:16:17 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/05 00:51:33 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	put_argv_to_a(t_struct *data, char **argv)
 	while (i + 1 <= data->total_size)
 	{
 		data->a.stack[i] = ft_atoi_simple(argv[i + 1]);
-		if ((data->a.stack[i] == 0 && ft_memcmp(argv[i + 1], "0", 1))
+		if ((data->a.stack[i] == 0 && ft_strncmp(argv[i + 1], "0", 2))
 			|| sort_s_stock(data, data->a.stack[i], i) == FALSE)
 			error_exit_with_free(data, "invalid figure");
 		i++;
