@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   print_d.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 16:40:22 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 14:30:37 by tshigena         ###   ########.fr       */
+/*   Created: 2021/11/01 22:54:50 by tshigena          #+#    #+#             */
+/*   Updated: 2021/12/01 13:46:01 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+size_t	print_d(int d)
 {
-	write(fd, &c, 1);
+	if (d < 0)
+	{
+		write(1, "-", 1);
+		return (1 + put_num_dx(d * -1UL, 10, 0));
+	}
+	return (put_num_dx(d, 10, 0));
 }

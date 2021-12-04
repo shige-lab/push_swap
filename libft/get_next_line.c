@@ -6,18 +6,18 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 23:00:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 19:24:19 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/01 14:00:43 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 #define BUFFER_SIZE 5
 
-void	ft_free(char **p);
-int		split_by_n(char *total, char **line, char **save, char *location_n);
-char	*get_one_line(int fd, char *buf, char **save, ssize_t bufsize);
-char	*ft_strchr_dx(const char *s, int c);
+static void	ft_free(char **p);
+static int	split_by_n(char *total, char **line, char **save, char *location_n);
+static char	*get_one_line(int fd, char *buf, char **save, ssize_t bufsize);
+static char	*ft_strchr_dx(const char *s, int c);
 
 char	*get_next_line(int fd)
 {
@@ -25,7 +25,7 @@ char	*get_next_line(int fd)
 	static char	*keep_lines = NULL;
 	ssize_t		bufsize;
 
-	if (0 > fd || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
+	if (0 > fd || BUFFER_SIZE <= 0)
 		return (NULL);
 	buf = (char *)malloc(((size_t)BUFFER_SIZE + 1) * sizeof(char));
 	if (buf == NULL)
@@ -39,7 +39,7 @@ char	*get_next_line(int fd)
 	return (get_one_line(fd, buf, &keep_lines, bufsize));
 }
 
-char	*get_one_line(int fd, char *buf, char **save, ssize_t bufsize)
+static char	*get_one_line(int fd, char *buf, char **save, ssize_t bufsize)
 {
 	char		*total;
 	char		*line;
@@ -66,7 +66,7 @@ char	*get_one_line(int fd, char *buf, char **save, ssize_t bufsize)
 	return (line);
 }
 
-int	split_by_n(char *total, char **line, char **save, char *location_n)
+static int	split_by_n(char *total, char **line, char **save, char *location_n)
 {
 	if (total == NULL)
 	{
@@ -90,7 +90,7 @@ int	split_by_n(char *total, char **line, char **save, char *location_n)
 	return (1);
 }
 
-char	*ft_strchr_dx(const char *s, int c)
+static char	*ft_strchr_dx(const char *s, int c)
 {
 	size_t	i;
 	char	*ss;
@@ -110,7 +110,7 @@ char	*ft_strchr_dx(const char *s, int c)
 	return (NULL);
 }
 
-void	ft_free(char **p)
+static void	ft_free(char **p)
 {
 	if (p)
 	{

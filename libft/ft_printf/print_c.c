@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   print_c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 16:40:22 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 14:30:37 by tshigena         ###   ########.fr       */
+/*   Created: 2021/11/01 22:54:06 by tshigena          #+#    #+#             */
+/*   Updated: 2021/12/01 13:46:01 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+size_t	print_c(int c)
 {
-	write(fd, &c, 1);
+	ft_putchar_fd((unsigned char)c, 1);
+	return (1);
 }

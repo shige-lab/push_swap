@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   print_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 16:40:22 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 14:30:37 by tshigena         ###   ########.fr       */
+/*   Created: 2021/11/02 11:29:29 by tshigena          #+#    #+#             */
+/*   Updated: 2021/12/01 13:46:01 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+size_t	print_p(unsigned long long p)
 {
-	write(fd, &c, 1);
+	ft_putstr_fd("0x", 1);
+	return (2 + put_num_dx(p, 16, 0));
 }

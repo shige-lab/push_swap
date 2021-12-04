@@ -12,8 +12,7 @@ SRCS =  src/function_for_main.c \
 		src/sort_disposal_parts.c \
 		src/error_disposal.c \
 		src/main.c
-CSRCS = src/get_next_line.c \
-		src/ft_checker.c \
+CSRCS = src/ft_checker.c \
 		src/function_for_main.c \
 		src/sort_disposal.c \
 		src/sort_s_stock.c \
