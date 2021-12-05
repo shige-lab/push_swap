@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:56:43 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/05 00:51:33 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/05 23:05:51 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	get_standard_value(t_struct *data)
 	data->index_1_8 = data->index_1_4 - data->index_1_4 / 2;
 	data->middle_num = data->s.stack[data->middle_index];
 	data->sorted_index = 0;
+	data->ra_count = 0;
+	data->rb_count = 0;
 }
 
 int	diff(t_struct data, int index)
