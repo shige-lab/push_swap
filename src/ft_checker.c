@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 21:53:09 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 19:31:39 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/05 23:35:11 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	data.total_size = argc - 1;
+	data.a.size = data.total_size;
 	put_argv_to_a(&data, argv);
 	while (1)
 	{
