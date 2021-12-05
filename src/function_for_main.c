@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:56:43 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/05 23:05:51 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/05 23:27:18 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	get_standard_value(t_struct *data)
 	data->sorted_index = 0;
 	data->ra_count = 0;
 	data->rb_count = 0;
+	data->b.size = 0;
 }
 
 int	diff(t_struct data, int index)
