@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 01:45:15 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/07 11:07:24 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	push_swap(t_struct *data)
 {
 	if (data->total_size == 2)
 	{
-		if (data->a.stack[0] == data->max_num)
+		if (data->a.stack[0] != data->s.stack[0])
 			ft_swap(data, 'a', TRUE);
 	}
 	else if (data->total_size == 3)

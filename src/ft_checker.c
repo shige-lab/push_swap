@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 21:53:09 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/05 23:35:11 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/07 11:00:14 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 		return (0);
 	data.total_size = argc - 1;
 	data.a.size = data.total_size;
-	put_argv_to_a(&data, argv);
+	agrv_to_a_stack(&data, argv);
 	while (1)
 	{
 		order = get_next_line(0);

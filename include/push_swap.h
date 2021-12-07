@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 01:35:32 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/07 11:05:36 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ typedef struct s_struct
 	t_stack	s;
 	int		total_size;
 	int		middle_num;
-	int		max_num;
-	int		min_num;
 	int		middle_index;
 	int		index_1_4;
 	int		index_3_4;
@@ -69,7 +67,7 @@ void	pb_and_sort_from_small(t_struct *data, int flag);
 void	push_quater_to_b(t_struct *data);
 t_bool	is_rr_from_b(t_struct *data);
 void	is_rr_from_a(t_struct *data);
-void	put_argv_to_a(t_struct *data, char **argv);
+void	agrv_to_a_stack(t_struct *data, char **argv);
 void	ft_free_stacks(t_struct data);
 int		diff(t_struct data, int index);
 char	*get_next_line(int fd);

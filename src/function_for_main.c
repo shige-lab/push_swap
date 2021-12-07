@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:56:43 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/05 23:27:18 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/07 11:05:07 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	get_standard_value(t_struct *data)
 {
-	data->max_num = data->s.stack[data->total_size - 1];
-	data->min_num = data->s.stack[0];
 	data->middle_index = data->total_size - data->total_size / 2;
 	data->index_1_4 = data->middle_index - data->middle_index / 2;
 	data->index_3_4 = data->total_size - data->index_1_4;
@@ -52,7 +50,7 @@ void	ft_free_stacks(t_struct data)
 	free(data.s.stack);
 }
 
-void	put_argv_to_a(t_struct *data, char **argv)
+void	agrv_to_a_stack(t_struct *data, char **argv)
 {
 	int	i;
 
