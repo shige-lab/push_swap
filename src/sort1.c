@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 01:36:42 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:45:25 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	pb_and_sort_from_small(t_struct *data, int flag)
 		ft_swap(data, 'a', TRUE);
 }
 
-void	sort_half_of_block(t_struct *data, int standard, int flag)
+void	sort_under_standard(t_struct *data, int standard, int flag)
 {
 	if (data->b.stack[0] > standard)
 	{
@@ -52,7 +52,7 @@ void	sort_half_of_block(t_struct *data, int standard, int flag)
 void	push_small_2block_to_bottom_of_a(t_struct *data, int d)
 {
 	while (data->b.size > data->middle_index - data->index_1_8)
-		sort_half_of_block(data, data->s.stack[data->index_1_8 - 1], 1);
+		sort_under_standard(data, data->s.stack[data->index_1_8 - 1], 1);
 	ra_minimum_numbers(data);
 	while (data->b.size > data->middle_index - data->index_1_4)
 	{
@@ -86,7 +86,7 @@ void	push_1block_to_bottom_of_a(t_struct *data, int d)
 			break ;
 		base = data->s.stack[data->sorted_index - 1 + data->index_1_8 / d];
 		while (data->b.size > b_size - data->index_1_8 / d)
-			sort_half_of_block(data, base, 0);
+			sort_under_standard(data, base, 0);
 		ra_minimum_numbers(data);
 		i++;
 	}
