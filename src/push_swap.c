@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:20:31 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/07 11:07:24 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/10 17:08:10 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,9 @@ void	push_swap_under_6(t_struct *data)
 
 void	push_swap_over_7(t_struct *data)
 {
-	int	 denominator;
+	int	denominator;
 
-	if (data->total_size >= 300)
-		denominator = 3;
-	else if (data->total_size >= 100)
+	if (data->total_size >= 100)
 		denominator = 2;
 	else if (data->total_size >= 50)
 		denominator = 1;
@@ -80,10 +78,25 @@ void	push_swap_over_7(t_struct *data)
 	push_small_2block_to_bottom_of_a(data, denominator);
 	while (data->a.stack[0] < data->s.stack[data->index_3_4])
 		push_quater_to_b(data);
-	push_1block_to_bottom_of_a(data, denominator);
+	push_1block_to_bottom_of_a(data, denominator, 0);
 	while (data->a.stack[0] != data->s.stack[0])
 		push_quater_to_b(data);
-	push_1block_to_bottom_of_a(data, denominator);
+	push_1block_to_bottom_of_a(data, denominator, 0);
+}
+
+void	push_swap_over_300(t_struct *data)
+{
+	split_to_4block_by_size_for_over_300(data);
+	push_1block_to_bottom_of_a(data, 3, 1);
+	while (data->a.stack[0] < data->s.stack[data->middle_index])
+		push_quater_to_b(data);
+	push_1block_to_bottom_of_a(data, 3, 0);
+	while (data->a.stack[0] < data->s.stack[data->index_3_4])
+		push_quater_to_b(data);
+	push_1block_to_bottom_of_a(data, 3, 0);
+	while (data->a.stack[0] != data->s.stack[0])
+		push_quater_to_b(data);
+	push_1block_to_bottom_of_a(data, 3, 0);
 }
 
 void	push_swap(t_struct *data)
@@ -97,6 +110,8 @@ void	push_swap(t_struct *data)
 		push_swap_3(data);
 	else if (data->total_size <= 6)
 		push_swap_under_6(data);
-	else
+	else if (data->total_size <= 300)
 		push_swap_over_7(data);
+	else
+		push_swap_over_300(data);
 }

@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/10 10:54:18 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/10 17:06:31 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,16 @@ void	ft_reverse_rotate(t_struct *data, char a_b, t_bool put_message);
 void	ft_ss_rr_rrr(t_struct *data, char *ss_rr_rrr, t_bool put_message);
 void	push_swap(t_struct *data);
 void	split_to_4block_by_size(t_struct *data);
+void	split_to_4block_by_size_for_over_300(t_struct *data);
 void	push_small_2block_to_bottom_of_a(t_struct *data, int d);
-void	push_1block_to_bottom_of_a(t_struct *data, int d);
+void	push_1block_to_bottom_of_a(t_struct *data, int d, int flag);
+void	push_1block_to_bottom_of_a1(t_struct *data, int d);
 void	ra_minimum_numbers(t_struct *data);
 void	pb_and_sort_from_small(t_struct *data, int flag);
 void	push_quater_to_b(t_struct *data);
 t_bool	is_rr_from_b(t_struct *data);
-void	pa_smallest_block_or_rr_if_possible(t_struct *data);
+void	rb_smallest_block_or_rr_if_possible(t_struct *data);
+void	rb_2nd_smallest_block_or_rr_if_possible(t_struct *data);
 void	agrv_to_a_stack(t_struct *data, char **argv);
 void	ft_free_stacks(t_struct data);
 int		diff(t_struct data, int index);

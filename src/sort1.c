@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/10 10:54:18 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/10 17:09:44 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ void	push_small_2block_to_bottom_of_a(t_struct *data, int d)
 		pb_and_sort_from_small(data, 1);
 		ra_minimum_numbers(data);
 	}
-	push_1block_to_bottom_of_a(data, d);
+	push_1block_to_bottom_of_a(data, d, 0);
 }
 
-void	push_1block_to_bottom_of_a(t_struct *data, int d)
+void	push_1block_to_bottom_of_a(t_struct *data, int d, int flag)
 {
 	int	b_size;
 	int	base;
@@ -86,13 +86,13 @@ void	push_1block_to_bottom_of_a(t_struct *data, int d)
 			break ;
 		base = data->s.stack[data->sorted_index - 1 + data->index_1_8 / d];
 		while (data->b.size > b_size - data->index_1_8 / d)
-			sort_under_standard(data, base, 0);
+			sort_under_standard(data, base, flag);
 		ra_minimum_numbers(data);
 		i++;
 	}
 	while (data->b.size != 0)
 	{
-		pb_and_sort_from_small(data, 0);
+		pb_and_sort_from_small(data, flag);
 		ra_minimum_numbers(data);
 	}
 }
@@ -104,7 +104,7 @@ void	split_to_4block_by_size(t_struct *data)
 		if (data->a.stack[0] < data->s.stack[data->index_3_4])
 		{
 			ft_push(data, 'b', TRUE);
-			pa_smallest_block_or_rr_if_possible(data);
+			rb_smallest_block_or_rr_if_possible(data);
 		}
 		else
 			ft_rotate(data, 'a', TRUE);

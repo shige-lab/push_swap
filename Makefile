@@ -8,6 +8,7 @@ SRCS =  src/function_for_main.c \
 		src/sort_s_stock.c \
 		src/sort1.c \
 		src/sort2.c \
+		src/sort3.c \
 		src/push_swap.c \
 		src/sort_disposal_parts.c \
 		src/error_disposal.c \
@@ -18,10 +19,12 @@ CSRCS = src/ft_checker.c \
 		src/sort_s_stock.c \
 		src/sort1.c \
 		src/sort2.c \
+		src/sort3.c \
 		src/push_swap.c \
 		src/sort_disposal_parts.c \
 		src/error_disposal.c
 OBJS = $(SRCS:%.c=%.o)
+COBJS = $(CSRCS:%.c=%.o)
 INCLUDE = -I include/
 
 all: $(NAME)
@@ -29,8 +32,8 @@ all: $(NAME)
 $(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJS) $(LIBFT)
 
-$(CHECKER): $(LIBFT)
-	$(CC) $(CFLAGS) $(INCLUDE) -o $(CHECKER) $(CSRCS) $(LIBFT)
+$(CHECKER): $(LIBFT) $(COBJS)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $(CHECKER) $(COBJS) $(LIBFT)
 
 $(LIBFT): empty
 	make -C libft
@@ -39,12 +42,13 @@ empty:
 %.o:%.c
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS)
+	$(RM) $(COBJS)
 	make clean -C libft
-	rm -f $(CHECKER)
 fclean: clean
-	rm -f $(NAME)
-	rm -f $(LIBFT)
+	$(RM) $(NAME)
+	$(RM) $(LIBFT)
+	$(RM) $(CHECKER)
 re: fclean all
 # test: $(NAME)
 # 	$(CC) $(CFLAGS) $(NAME) main.c &&./a.out
@@ -53,4 +57,4 @@ re: fclean all
 # test-: $(NAME)
 # 	$(CC) $(NAME) main.c &&./a.out
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re empty
