@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:43:24 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/09 00:45:25 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/10 10:54:18 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	split_to_4block_by_size(t_struct *data)
 		if (data->a.stack[0] < data->s.stack[data->index_3_4])
 		{
 			ft_push(data, 'b', TRUE);
-			is_rr_from_a(data);
+			pa_smallest_block_or_rr_if_possible(data);
 		}
 		else
 			ft_rotate(data, 'a', TRUE);

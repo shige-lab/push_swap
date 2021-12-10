@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 20:38:49 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/01 01:12:15 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/10 10:54:18 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_bool	is_rr_from_b(t_struct *data)
 	return (FALSE);
 }
 
-void	is_rr_from_a(t_struct *data)
+void	pa_smallest_block_or_rr_if_possible(t_struct *data)
 {
 	if (data->b.stack[0] < data->s.stack[data->index_1_4])
 	{

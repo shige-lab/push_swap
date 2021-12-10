@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 00:39:44 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/07 11:05:36 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/10 10:54:18 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ra_minimum_numbers(t_struct *data);
 void	pb_and_sort_from_small(t_struct *data, int flag);
 void	push_quater_to_b(t_struct *data);
 t_bool	is_rr_from_b(t_struct *data);
-void	is_rr_from_a(t_struct *data);
+void	pa_smallest_block_or_rr_if_possible(t_struct *data);
 void	agrv_to_a_stack(t_struct *data, char **argv);
 void	ft_free_stacks(t_struct data);
 int		diff(t_struct data, int index);
