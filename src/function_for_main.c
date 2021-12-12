@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:56:43 by tshigena          #+#    #+#             */
-/*   Updated: 2021/12/11 17:05:09 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/12 14:50:45 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_free_stacks(t_struct data)
 	free(data.s.stack);
 }
 
-void	agrv_to_a_stack(t_struct *data, char **argv)
+void	argv_to_a_stack(t_struct *data, char **argv)
 {
 	int	i;
 
