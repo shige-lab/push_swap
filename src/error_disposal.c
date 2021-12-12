@@ -6,7 +6,7 @@
 /*   By: tshigena <tshigena@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 22:32:15 by tshigena          #+#    #+#             */
-/*   Updated: 2021/11/30 19:34:58 by tshigena         ###   ########.fr       */
+/*   Updated: 2021/12/12 15:09:30 by tshigena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	error_exit(char *message)
 {
-	ft_putendl_fd("Error", 1);
-	ft_putendl_fd(message, 1);
+	ft_putendl_fd("Error", 2);
+	ft_putendl_fd(message, 2);
 	exit (1);
 }
 
